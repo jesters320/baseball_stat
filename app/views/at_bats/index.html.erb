@@ -1,4 +1,4 @@
-<h1>Stats</h1>
+<h1>At Bats</h1>
 
 <% if flash[:notice] %>
   <div class="alert alert-success"><%= flash[:notice] %></div>
@@ -24,25 +24,25 @@
     </tr>
   </thead>
   <tbody>
-    <% if @stats.size == 0 %>
+    <% if @at_bats.size == 0 %>
       <tr>
-        <td colspan="6">No stats found.</td>
+        <td colspan="6">No at_bats found.</td>
       </tr>
     <% else %>
-      <% @stats.each do |stat| %>
+      <% @at_bats.each do |at_bat| %>
         <tr>
-			<td><%= stat.game_id %></td>
-			<td><%= stat.at_bat_id %></td>
-			<td><%= stat.inning %></td>
-			<td><%= stat.player_id %></td>
-			<td><%= stat.balls_and_strikes %></td>
-			<td><%= stat.balls %></td>
-			<td><%= stat.strikes %></td>
-			<td><%= stat.current_pitch_call %></td>
-			<td><%= stat.scorecard %></td>
-			<td><%= stat.hit_location %></td>
-			<td><%= stat.current_pitcher %></td>
-			<td><%= stat.to_json %></td>
+			<td><%= at_bat.game_id %></td>
+			<td><%= at_bat.at_bat_id %></td>
+			<td><%= at_bat.inning %></td>
+			<td><%= at_bat.player_id %></td>
+			<td><%= at_bat.balls_and_strikes %></td>
+			<td><%= at_bat.balls %></td>
+			<td><%= at_bat.strikes %></td>
+			<td><%= at_bat.current_pitch_call %></td>
+			<td><%= at_bat.scorecard %></td>
+			<td><%= at_bat.hit_location %></td>
+			<td><%= at_bat.current_pitcher %></td>
+			<td><%= at_bat.to_json %></td>
         </tr>
       <% end %>
     <% end %>

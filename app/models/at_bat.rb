@@ -1,4 +1,4 @@
-class Stat
+class AtBat
   include Mongoid::Document
   field :game_id, type: String
   field :at_bat_id, type: String
