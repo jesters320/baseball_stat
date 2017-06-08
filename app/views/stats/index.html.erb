@@ -4,6 +4,8 @@
   <div class="alert alert-success"><%= flash[:notice] %></div>
 <% end %>
 
+<%= will_paginate @posts %>
+
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
