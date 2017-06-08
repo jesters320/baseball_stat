@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  game_id: MyString
+  at_bat_id: MyString
+  inning: MyString
+  player_id: MyString
+  balls_and_strikes: MyString
+  balls: MyString
+  strikes: MyString
+  current_pitch_call: MyString
+  scorecard: MyString
+  hit_location: MyString
+  current_pitcher: MyString
+
+two:
+  game_id: MyString
+  at_bat_id: MyString
+  inning: MyString
+  player_id: MyString
+  balls_and_strikes: MyString
+  balls: MyString
+  strikes: MyString
+  current_pitch_call: MyString
+  scorecard: MyString
+  hit_location: MyString
+  current_pitcher: MyString

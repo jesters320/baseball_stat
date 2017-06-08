@@ -1,0 +1,48 @@
+<h1>Stats</h1>
+
+<% if flash[:notice] %>
+  <div class="alert alert-success"><%= flash[:notice] %></div>
+<% end %>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+		<th>game_id</th>
+		<th>at_bat_id</th>
+		<th>inning</th>
+		<th>player_id</th>
+		<th>balls_and_strikes</th>
+		<th>balls</th>
+		<th>strikes</th>
+		<th>current_pitch_call</th>
+		<th>scorecard</th>
+		<th>hit_location</th>
+		<th>current_pitcher</th>
+		<th>json</json>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @stats.size == 0 %>
+      <tr>
+        <td colspan="6">No stats found.</td>
+      </tr>
+    <% else %>
+      <% @stats.each do |stat| %>
+        <tr>
+			<td><%= stat.game_id %></td>
+			<td><%= stat.at_bat_id %></td>
+			<td><%= stat.inning %></td>
+			<td><%= stat.player_id %></td>
+			<td><%= stat.balls_and_strikes %></td>
+			<td><%= stat.balls %></td>
+			<td><%= stat.strikes %></td>
+			<td><%= stat.current_pitch_call %></td>
+			<td><%= stat.scorecard %></td>
+			<td><%= stat.hit_location %></td>
+			<td><%= stat.current_pitcher %></td>
+			<td><%= stat.to_json %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
