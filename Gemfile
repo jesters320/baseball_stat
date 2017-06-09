@@ -48,6 +48,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'mongoid'
 #gem 'will_paginate_mongoid', '~> 2.0', '>= 2.0.1'
-gem 'mongoid-data_table'
 gem 'bootstrap-sass'
-gem 'kaminari-mongoid'
