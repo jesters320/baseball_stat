@@ -1,12 +1,20 @@
-<h1>At Bats</h1>
+<script>
+
+$(document).ready(function() {
+    $('#table1').DataTable();
+} );
+
+</script>
+
+
+<h1>at_bats</h1>
 
 <% if flash[:notice] %>
   <div class="alert alert-success"><%= flash[:notice] %></div>
 <% end %>
 
-<%= will_paginate @posts %>
 
-<table class="table table-bordered table-striped">
+<table id="table1" class="table table-bordered table-striped">
   <thead>
     <tr>
 		<th>game_id</th>

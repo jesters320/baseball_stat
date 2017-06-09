@@ -1,5 +1,6 @@
 class AtBat
   include Mongoid::Document
+  
   field :game_id, type: String
   field :at_bat_id, type: String
   field :inning, type: String
@@ -11,4 +12,5 @@ class AtBat
   field :scorecard, type: String
   field :hit_location, type: String
   field :current_pitcher, type: String
+  
 end
