@@ -1,0 +1,33 @@
+<h1>teams</h1>
+
+<% if flash[:notice] %>
+  <div class="alert alert-success"><%= flash[:notice] %></div>
+<% end %>
+
+
+<table id="table1" class="table table-bordered table-striped">
+  <thead>
+    <tr>
+		<th>code</th>
+		<th>league</th>
+		<th>location</th>
+		<th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @teams.size == 0 %>
+      <tr>
+        <td colspan="6">No teams found.</td>
+      </tr>
+    <% else %>
+      <% @teams.each do |team| %>
+        <tr>
+			<td><%= link_to team.code, at_bats_path(:team_code => team.code) %></td>
+			<td><%= team.league %></td>
+			<td><%= team.location %></td>
+			<td><%= team.name %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
