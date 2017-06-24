@@ -13,6 +13,10 @@ $(document).ready(function() {
   <div class="alert alert-success"><%= flash[:notice] %></div>
 <% end %>
 
+<div>
+	<%= select_tag "teams", options_from_collection_for_select(@teams, "code", "name", @team_code), 
+	onchange: "location.href='#{at_bats_path()}?team_code='+this.value", class: "pull-right" %>
+</div>
 
 <table id="table1" class="table table-bordered table-striped">
   <thead>
