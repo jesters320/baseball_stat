@@ -5,12 +5,7 @@ class AtBatsController < ApplicationController
 	@team_code = "ANA"
 	@team_code = params[:team_code]
 	
-	@at_bats = AtBat.where("info.hometeam" => @team_code).order_by(:at_bat_id.asc).limit(11)
-	
-	logger.warn "==========index>>@at_bats==========" 
-	logger.warn @at_bats.to_json
-	logger.warn "==========index>>@at_bats==========" 
-	
+	@at_bats = AtBat.or({"info.hometeam" => @team_code}, {"info.visteam" => @team_code}).order_by(:at_bat_id.asc)
 	@teams = Team.all.order_by(:code.asc)
 	# @at_bats = AtBat.order_by(:at_bat_id.asc)
 
