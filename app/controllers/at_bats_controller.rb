@@ -11,29 +11,4 @@ class AtBatsController < ApplicationController
 
   end
   
-  def data_table
-	@team_code = "PHI"
-	# @team_code = params[:team_code]
-	
-	@echo = params[:sEcho]
-	logger.warn "==========Echo==========" 
-	logger.warn @echo
-	logger.warn "==========Echo=========="
-	
-	@at_bat_count = AtBat.where("info.hometeam" => @team_code).count
-	
-	@at_bat_filtered_count = AtBat.where("info.hometeam" => @team_code).count
-	
-	@aaData = AtBat.where("info.hometeam" => @team_code).limit(10).pluck(:game_id, :at_bat_id, :inning, :player_id, :balls_and_strikes, :balls, :strikes, :current_pitch_call, :scorecard, :hit_location, :current_pitcher)
-	
-	logger.warn "==========data_table>>@aaData==========" 
-	#logger.warn JSON.parse(@aaData[0].to_json(except: :_id)).fetch("balls")
-	logger.warn @aaData.to_s
-	logger.warn "==========data_table>>@aaData===========" 
-	
-	data_table_object = {iTotalRecords: @at_bat_count, iTotalDisplayRecords: @at_bat_filtered_count, sEcho: @echo, aaData: @aaData}
-	
-    render json: data_table_object
-  end
-  
 end

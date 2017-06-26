@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get 'at_bats', to: 'at_bats#index'
-  get 'at_bats/data_table', to: 'at_bats#data_table'
   
   get 'teams', to: 'teams#index'
 
