@@ -17,3 +17,6 @@
 
 # Sensitive files
 /config/application.yml
+
+# archives
+/*.zip
